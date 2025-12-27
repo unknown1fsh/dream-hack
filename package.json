@@ -1,0 +1,19 @@
+{
+    "name": "dream-hack",
+    "version": "1.0.0",
+    "description": "Türkiye pazarına uygun, para kazandıracak modern ve ölçeklenebilir bir web uygulaması",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" --names \"frontend,backend\" --prefix-colors \"cyan,magenta\"",
+        "dev:frontend": "cd apps/frontend && npm run dev",
+        "dev:backend": "cd apps/backend && npm start",
+        "install:all": "npm install && cd apps/frontend && npm install && cd ../backend && npm install"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
